@@ -144,11 +144,13 @@ export default {
       this.name_path.title = 'Airing Today'
       this.name_path.isCategory = this.$route.name
     } 
-    this.getItems()
+    this.getItems(false, true)
+    
   },
   methods: {
-    getItems() {
-      this.isLoading = true
+    getItems(btnLoad=false, load=false) {
+      this.isLoadingBtn = btnLoad
+      this.isLoading = load
       this.flag.getitem = true
       this.flag.search = false
       this.isNotFound = false
@@ -166,6 +168,7 @@ export default {
             this.isBtnPage = false
           }
           this.isLoading = false
+          this.isLoadingBtn = false
         })
         .catch((err) => {
           console.log(err)
@@ -210,13 +213,10 @@ export default {
     },
     async loadPage() {
       this.hal += 1
-      this.isLoadingBtn = true
       if(this.flag.getitem) {
-        await this.getItems()
-        this.isLoadingBtn = false
+        this.getItems(true, false)
       } else {
-        await this.cariItem()
-        this.isLoadingBtn = false
+        this.cariItem()
       }
     },
     clear() {
