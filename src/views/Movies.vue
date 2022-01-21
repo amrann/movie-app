@@ -32,8 +32,8 @@
         </div>
       </div>
       <div class="row mb-4">
-        <div v-if="isLoading" class="text-center">
-          <div class="spinner-border" role="status">
+        <div v-if="isLoading" class="text-center mt-5">
+          <div class="spinner-border mt-5" role="status">
             <span class="sr-only"></span>
           </div>
         </div>
@@ -61,10 +61,10 @@
               <h5>Data Tidak Ditemukan </h5>
             </div>
           </div>
-          <div class="row mt-5">
+          <div class="row mt-5 justify-content-center">
             <div class="col-md-4">
-              <div v-if="isBtnPage" class="input-group mb-3">
-                <button type="button" class="btn btn-primary btn-lg btn-block" @click="loadPage">Load More ...
+              <div v-if="isBtnPage" class="input-group mb-3 justify-content-center">
+                <button type="button" class="btn btn-outline-secondary btn-sm" @click="loadPage">View More ...
                   <span v-if="isLoadingBtn" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 </button>
               </div>

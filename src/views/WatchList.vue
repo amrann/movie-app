@@ -17,8 +17,8 @@
       </div>
 
       <div class="row mb-4">
-        <div v-if="isLoading" class="text-center">
-          <div class="spinner-border" role="status">
+        <div v-if="isLoading" class="text-center mt-5">
+          <div class="spinner-border mt-5" role="status">
             <span class="sr-only"></span>
           </div>
         </div>
